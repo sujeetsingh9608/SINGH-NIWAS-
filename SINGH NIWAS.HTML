@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>सिंह निवास</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#333;
+    }
+
+    header{
+      background:#8B0000;
+      color:white;
+      padding:25px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:40px;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:18px;
+    }
+
+    .hero{
+      height:350px;
+      background:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200') center/cover;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      text-align:center;
+    }
+
+    .hero h2{
+      background:rgba(0,0,0,0.6);
+      padding:15px 25px;
+      border-radius:10px;
+      font-size:35px;
+    }
+
+    .about{
+      padding:50px 20px;
+      text-align:center;
+      background:white;
+    }
+
+    .about h2{
+      color:#8B0000;
+      margin-bottom:20px;
+      font-size:32px;
+    }
+
+    .about p{
+      max-width:800px;
+      margin:auto;
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    .gallery{
+      padding:50px 20px;
+      text-align:center;
+    }
+
+    .gallery h2{
+      margin-bottom:30px;
+      color:#8B0000;
+      font-size:32px;
+    }
+
+    .gallery-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .gallery-container img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:30px;
+      }
+
+      .hero h2{
+        font-size:24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>सिंह निवास</h1>
+    <p>स्थान - बसतपुर बड़ा टोला</p>
+  </header>
+
+  <section class="hero">
+    <h2>आपका स्वागत है</h2>
+  </section>
+
+  <section class="about">
+    <h2>हमारे बारे में</h2>
+    <p>
+      सिंह निवास में आपका हार्दिक स्वागत है। 
+      यह वेबसाइट हमारे निवास, परिवार एवं स्थान की जानकारी प्रदान करने हेतु बनाई गई है।
+      बसतपुर बड़ा टोला की सुंदरता और संस्कृति को दर्शाने का हमारा प्रयास है।
+    </p>
+  </section>
+
+  <section class="gallery">
+    <h2>फोटो गैलरी</h2>
+
+    <div class="gallery-container">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800" alt="">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800" alt="">
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800" alt="">
+    </div>
+  </section>
+
+  <footer>
+    © 2026 सिंह निवास | सभी अधिकार सुरक्षित
+  </footer>
+
+</body>
+</html>
