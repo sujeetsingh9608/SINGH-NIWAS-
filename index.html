@@ -1,152 +1,92 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>सिंह निवास</title>
+export default function SinghNiwasWebsite() {
+  return (
+    <div className="min-h-screen bg-gray-100 text-gray-900 font-sans">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-20 px-6 text-center">
+        <h1 className="text-5xl font-bold mb-4">Singh Niwas</h1>
+        <p className="text-lg max-w-2xl mx-auto">
+          Welcome to Singh Niwas — a modern and elegant space designed for comfort, hospitality, and memorable experiences.
+        </p>
+        <button className="mt-8 bg-white text-blue-700 px-6 py-3 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+          Explore More
+        </button>
+      </section>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, sans-serif;
-    }
+      {/* About Section */}
+      <section className="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 className="text-3xl font-bold mb-4">About Singh Niwas</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Singh Niwas offers a welcoming environment with modern amenities, stylish interiors, and a peaceful atmosphere. Whether you are visiting for relaxation, family gatherings, or special occasions, Singh Niwas provides the perfect setting.
+          </p>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+          alt="Luxury Interior"
+          className="rounded-3xl shadow-xl w-full h-80 object-cover"
+        />
+      </section>
 
-    body{
-      background:#f5f5f5;
-      color:#333;
-    }
+      {/* Features Section */}
+      <section className="bg-white py-16 px-6">
+        <h2 className="text-3xl font-bold text-center mb-12">Features</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            {
+              title: 'Luxury Rooms',
+              desc: 'Spacious and beautifully designed rooms for maximum comfort.',
+            },
+            {
+              title: 'Peaceful Environment',
+              desc: 'A calm and relaxing atmosphere perfect for families and guests.',
+            },
+            {
+              title: 'Modern Facilities',
+              desc: 'Equipped with all modern amenities and stylish interiors.',
+            },
+          ].map((feature, index) => (
+            <div
+              key={index}
+              className="bg-gray-100 p-8 rounded-3xl shadow-md hover:shadow-2xl transition-shadow"
+            >
+              <h3 className="text-2xl font-semibold mb-3">{feature.title}</h3>
+              <p className="text-gray-600">{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-    header{
-      background:#8B0000;
-      color:white;
-      padding:25px;
-      text-align:center;
-    }
+      {/* Gallery */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">Gallery</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            'https://images.unsplash.com/photo-1494526585095-c41746248156',
+            'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688',
+            'https://images.unsplash.com/photo-1484154218962-a197022b5858',
+          ].map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt="Gallery"
+              className="rounded-3xl shadow-lg h-72 w-full object-cover hover:scale-105 transition-transform"
+            />
+          ))}
+        </div>
+      </section>
 
-    header h1{
-      font-size:40px;
-      margin-bottom:10px;
-    }
+      {/* Contact Section */}
+      <section className="bg-indigo-800 text-white py-16 px-6 text-center">
+        <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+        <p className="mb-2">📍 Bettiah, Bihar, India</p>
+        <p className="mb-2">📞 +91 98765 43210</p>
+        <p>✉️ contact@singhniwas.com</p>
+      </section>
 
-    header p{
-      font-size:18px;
-    }
-
-    .hero{
-      height:350px;
-      background:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200') center/cover;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      text-align:center;
-    }
-
-    .hero h2{
-      background:rgba(0,0,0,0.6);
-      padding:15px 25px;
-      border-radius:10px;
-      font-size:35px;
-    }
-
-    .about{
-      padding:50px 20px;
-      text-align:center;
-      background:white;
-    }
-
-    .about h2{
-      color:#8B0000;
-      margin-bottom:20px;
-      font-size:32px;
-    }
-
-    .about p{
-      max-width:800px;
-      margin:auto;
-      line-height:1.8;
-      font-size:18px;
-    }
-
-    .gallery{
-      padding:50px 20px;
-      text-align:center;
-    }
-
-    .gallery h2{
-      margin-bottom:30px;
-      color:#8B0000;
-      font-size:32px;
-    }
-
-    .gallery-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
-
-    .gallery-container img{
-      width:100%;
-      height:250px;
-      object-fit:cover;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    footer{
-      background:#111;
-      color:white;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
-    }
-
-    @media(max-width:768px){
-      header h1{
-        font-size:30px;
-      }
-
-      .hero h2{
-        font-size:24px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>सिंह निवास</h1>
-    <p>स्थान - बसतपुर बड़ा टोला</p>
-  </header>
-
-  <section class="hero">
-    <h2>आपका स्वागत है</h2>
-  </section>
-
-  <section class="about">
-    <h2>हमारे बारे में</h2>
-    <p>
-      सिंह निवास में आपका हार्दिक स्वागत है। 
-      यह वेबसाइट हमारे निवास, परिवार एवं स्थान की जानकारी प्रदान करने हेतु बनाई गई है।
-      बसतपुर बड़ा टोला की सुंदरता और संस्कृति को दर्शाने का हमारा प्रयास है।
-    </p>
-  </section>
-
-  <section class="gallery">
-    <h2>फोटो गैलरी</h2>
-
-    <div class="gallery-container">
-      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800" alt="">
-      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800" alt="">
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800" alt="">
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-400 py-6 text-center">
+        <p>© 2026 Singh Niwas. All rights reserved.</p>
+      </footer>
     </div>
-  </section>
-
-  <footer>
-    © 2026 सिंह निवास | सभी अधिकार सुरक्षित
-  </footer>
-
-</body>
-</html>
+  );
+}
